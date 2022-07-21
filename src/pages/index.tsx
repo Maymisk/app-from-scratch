@@ -70,26 +70,28 @@ export default function Home({ postsPagination }: HomeProps) {
       <div className={styles.posts}>
         {pageData.results?.map(post => {
           return (
-            <a
-              href={`/post/${post.uid}`}
-              key={post.uid}
-              className={styles.post}
-            >
-              <h1>{post.data.title}</h1>
-              <p>{post.data.subtitle}</p>
-              <footer>
-                <div>
-                  <FiCalendar />
-                  {format(new Date(post.first_publication_date), 'd MMM yyyy', {
-                    locale: ptBR,
-                  })}
-                </div>
-                <div>
-                  <FiUser />
-                  {post.data.author}
-                </div>
-              </footer>
-            </a>
+            <Link href={`/post/${post.uid}`} key={post.uid}>
+              <a className={styles.post}>
+                <h1>{post.data.title}</h1>
+                <p>{post.data.subtitle}</p>
+                <footer>
+                  <div>
+                    <FiCalendar />
+                    {format(
+                      new Date(post.first_publication_date),
+                      'd MMM yyyy',
+                      {
+                        locale: ptBR,
+                      }
+                    )}
+                  </div>
+                  <div>
+                    <FiUser />
+                    {post.data.author}
+                  </div>
+                </footer>
+              </a>
+            </Link>
           );
         })}
       </div>
