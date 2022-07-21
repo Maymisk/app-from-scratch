@@ -4,4 +4,44 @@
   padding: 0;
 }
 
-// TODO
+:root {
+  --highlight: #ff57b2;
+
+  --background: #1a1d23;
+
+  --heading: #f8f8f8;
+
+  --info: #bbbbbb;
+
+  --body: #d7d7d7;
+}
+
+html {
+  @media (max-width: 1080px) {
+    font-size: 93.75%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 87.5%;
+  }
+}
+
+body {
+  background: var(--background);
+
+  color: white;
+}
+
+body,
+input,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
